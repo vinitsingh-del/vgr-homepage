@@ -120,91 +120,160 @@ img{display:block;max-width:100%}
 @keyframes pipPop{from{transform:scale(0)}to{transform:scale(1)}}
 
 /* ================================================================
-   HERO — PARALLAX
+   HERO — VIDEO BANNER
 ================================================================ */
+/* Mobile-first: full-height video fills screen, text at bottom */
 .hero{
-  position:relative;height:90svh;height:90vh;
-  min-height:540px;max-height:900px;
-  overflow:hidden;
-  background:linear-gradient(155deg,#051a18 0%,#083a35 50%,#051a18 100%);
-  display:flex;align-items:flex-end
+  position:relative;
+  min-height:100svh;min-height:100vh;
+  max-height:100svh;max-height:100vh;
+  display:flex;flex-direction:column;
+  overflow:hidden;background:#0d1211
 }
-.h-bg{position:absolute;inset:-18% 0 0;will-change:transform;z-index:1}
-.h-bg img{width:100%;height:118%;object-fit:cover;object-position:center top;opacity:.5}
-.h-grain{position:absolute;inset:0;z-index:2;pointer-events:none;
-         background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
-         background-size:180px;mix-blend-mode:overlay;opacity:.6}
-.h-veil{position:absolute;inset:0;z-index:3;
-        background:linear-gradient(180deg,rgba(5,26,24,.04) 0%,rgba(5,26,24,0) 18%,rgba(5,26,24,.25) 52%,rgba(5,26,24,.9) 100%)}
-.h-glow{position:absolute;top:-20%;left:-10%;z-index:2;
-        width:60%;aspect-ratio:1/1;
-        background:radial-gradient(circle,rgba(10,151,144,.26) 0%,transparent 68%);
-        pointer-events:none}
+/* Video background on mobile: covers full hero */
+.hero-vid-bg{
+  position:absolute;inset:0;z-index:1;overflow:hidden
+}
+.hero-vid-bg video{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block
+}
+/* Dark overlay so text is legible over video */
+.hero-vid-overlay{
+  position:absolute;inset:0;z-index:2;
+  background:linear-gradient(
+    180deg,
+    rgba(5,20,18,.12) 0%,
+    rgba(5,20,18,.08) 30%,
+    rgba(5,20,18,.55) 65%,
+    rgba(5,20,18,.94) 100%
+  )
+}
+.h-glow{
+  position:absolute;top:-20%;left:-10%;z-index:2;
+  width:60%;aspect-ratio:1/1;
+  background:radial-gradient(circle,rgba(10,151,144,.22) 0%,transparent 68%);
+  pointer-events:none
+}
+/* Text block: sits at bottom on mobile */
 .h-body{
   position:relative;z-index:10;
-  width:100%;max-width:var(--max);margin:0 auto;
-  padding:0 var(--px) 100px  /* bottom clearance for proof bar */
+  margin-top:auto;
+  width:100%;max-width:var(--max);margin-left:auto;margin-right:auto;
+  padding:0 var(--px) 100px
 }
-.h-kicker{display:inline-flex;align-items:center;gap:10px;
-          font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-          color:var(--teal);margin-bottom:14px;
-          animation:fadeUp .6s 2.2s cubic-bezier(.22,1,.36,1) both}
+.h-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:14px;
+  animation:fadeUp .6s 2.2s cubic-bezier(.22,1,.36,1) both
+}
 .h-kicker-line{width:20px;height:1.5px;background:var(--teal);border-radius:1px;flex-shrink:0}
-.h-headline{font-family:var(--F);
-            font-size:clamp(40px,10vw,96px);
-            font-weight:800;line-height:.97;letter-spacing:-2px;
-            color:#fff;margin-bottom:16px;
-            animation:fadeUp .65s 2.3s cubic-bezier(.22,1,.36,1) both}
+.h-headline{
+  font-family:var(--F);
+  font-size:clamp(40px,10vw,80px);
+  font-weight:800;line-height:.97;letter-spacing:-2px;
+  color:#fff;margin-bottom:16px;
+  animation:fadeUp .65s 2.3s cubic-bezier(.22,1,.36,1) both
+}
 .h-headline em{font-style:italic;color:var(--teal);font-weight:300}
-.h-sub{font-size:14px;font-weight:400;color:rgba(255,255,255,.55);
-       max-width:380px;line-height:1.65;margin-bottom:24px;
-       animation:fadeUp .6s 2.45s cubic-bezier(.22,1,.36,1) both}
-.h-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-           animation:fadeUp .55s 2.6s cubic-bezier(.22,1,.36,1) both}
-.h-btn-primary{padding:13px 24px;border-radius:var(--pill);
-               background:var(--teal);color:#fff;
-               font-size:13.5px;font-weight:700;
-               cursor:pointer;transition:background .18s,transform .13s}
+.h-sub{
+  font-size:14px;color:rgba(255,255,255,.58);
+  max-width:380px;line-height:1.65;margin-bottom:24px;
+  animation:fadeUp .6s 2.45s cubic-bezier(.22,1,.36,1) both
+}
+.h-actions{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  animation:fadeUp .55s 2.6s cubic-bezier(.22,1,.36,1) both
+}
+.h-btn-primary{
+  padding:13px 24px;border-radius:var(--pill);
+  background:var(--teal);color:#fff;
+  font-size:13.5px;font-weight:700;cursor:pointer;
+  transition:background .18s,transform .13s
+}
 .h-btn-primary:hover{background:var(--teal-d)}
 .h-btn-primary:active{transform:scale(.97)}
-.h-btn-ghost{padding:12px 20px;border-radius:var(--pill);
-             border:1.5px solid rgba(255,255,255,.28);color:rgba(255,255,255,.82);
-             font-size:13.5px;font-weight:600;cursor:pointer;
-             transition:border-color .18s,color .18s,background .18s}
+.h-btn-ghost{
+  padding:12px 20px;border-radius:var(--pill);
+  border:1.5px solid rgba(255,255,255,.28);color:rgba(255,255,255,.82);
+  font-size:13.5px;font-weight:600;cursor:pointer;display:inline-flex;
+  transition:border-color .18s,color .18s,background .18s
+}
 .h-btn-ghost:hover{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.06)}
-/* proof bar */
-.h-proof{position:absolute;bottom:0;left:0;right:0;z-index:10;
-         display:flex;border-top:1px solid rgba(255,255,255,.07);
-         background:rgba(5,26,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-         animation:fadeUp .5s 2.75s cubic-bezier(.22,1,.36,1) both}
-.h-pf{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding:10px 4px;gap:2px;border-right:1px solid rgba(255,255,255,.06)}
+/* Sound toggle */
+.h-sound{
+  position:absolute;top:14px;right:var(--px);z-index:20;
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  cursor:pointer;transition:background .2s
+}
+.h-sound:hover{background:rgba(255,255,255,.2)}
+/* Proof bar */
+.h-proof{
+  position:absolute;bottom:0;left:0;right:0;z-index:10;
+  display:flex;border-top:1px solid rgba(255,255,255,.07);
+  background:rgba(5,26,24,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  animation:fadeUp .5s 2.75s cubic-bezier(.22,1,.36,1) both
+}
+.h-pf{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:10px 4px;gap:2px;border-right:1px solid rgba(255,255,255,.06)
+}
 .h-pf:last-child{border-right:none}
 .h-pf-n{font-family:var(--F);font-size:14px;font-weight:800;color:var(--teal);line-height:1}
 .h-pf-l{font-size:8.5px;font-weight:500;color:rgba(255,255,255,.38);
          text-align:center;line-height:1.3;letter-spacing:.04em}
-/* carousel controls */
-.h-arr{position:absolute;z-index:12;
-       width:34px;height:34px;border-radius:50%;
-       background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
-       backdrop-filter:blur(6px);
-       display:flex;align-items:center;justify-content:center;color:#fff;
-       transition:background .2s;top:50%;transform:translateY(-50%)}
-.h-arr:hover{background:rgba(255,255,255,.18)}
-.h-arr.l{left:var(--px)}.h-arr.r{right:var(--px)}
-.h-slide{flex-shrink:0;width:100%;height:100%;
-         position:absolute;top:0;left:0;pointer-events:none;
-         opacity:0;transition:opacity .7s ease}
-.h-slide.active{opacity:1;pointer-events:all}
-.h-slide img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.h-dots{position:absolute;bottom:58px;left:var(--px);display:flex;gap:5px;z-index:11}
-.h-dot{width:5px;height:5px;border-radius:50%;
-       background:rgba(255,255,255,.28);border:none;padding:0;cursor:pointer;
-       transition:all .3s cubic-bezier(.34,1.56,.64,1)}
-.h-dot.on{width:20px;border-radius:3px;background:var(--teal)}
-.h-prog{position:absolute;bottom:0;left:0;right:0;z-index:13;height:2px;background:rgba(255,255,255,.06)}
-.h-pf-prog{height:100%;background:var(--teal)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* ================================================================
+   HERO — DESKTOP SPLIT (1024px+)
+   Left dark panel = text  |  Right light panel = video
+================================================================ */
+@media(min-width:1024px){
+  .hero{flex-direction:row;max-height:none;min-height:100vh}
+  /* Hide mobile-style full-bg video */
+  .hero-vid-bg,.hero-vid-overlay,.h-glow{display:none}
+  /* Left panel */
+  .h-body{
+    width:50%;flex-shrink:0;
+    background:linear-gradient(155deg,#051a18 0%,#083a35 55%,#062d28 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:0 56px 100px;
+    margin:0;max-width:none;
+    position:relative;overflow:hidden
+  }
+  .h-body::before{
+    content:'';position:absolute;top:-30%;left:-15%;
+    width:70%;aspect-ratio:1;
+    background:radial-gradient(circle,rgba(10,151,144,.22) 0%,transparent 65%);
+    pointer-events:none
+  }
+  .h-headline{font-size:clamp(44px,4.5vw,80px);letter-spacing:-3px}
+  .h-sub{font-size:15px}
+  /* Right panel */
+  .hero-vid-panel{
+    width:50%;flex-shrink:0;
+    background:#f0efed;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;position:relative
+  }
+  .hero-vid-panel video{
+    height:100%;width:100%;
+    object-fit:contain;object-position:center;
+    display:block
+  }
+  /* Proof bar spans full width at bottom */
+  .h-proof{
+    position:fixed;  /* sticky across both panels */
+    position:absolute
+  }
+  /* Sound toggle repositioned */
+  .h-sound{right:calc(50% + 16px)}
+}
 
 /* ================================================================
    MARQUEE
@@ -681,28 +750,19 @@ img{display:block;max-width:100%}
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="hero">
-  <!-- Parallax bg layer (JS moves this) -->
-  <div class="h-bg" id="hBg">
-    <div class="h-slide active" id="hS0">
-      <img src="https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=1400" alt="" loading="eager" fetchpriority="high">
-    </div>
-    <div class="h-slide" id="hS1">
-      <img src="https://vgrofficial.in/cdn/shop/files/Artboard_13_copy_2.png?width=1400" alt="" loading="lazy">
-    </div>
-    <div class="h-slide" id="hS2">
-      <img src="https://vgrofficial.in/cdn/shop/files/1745289851729_V-STEPLESSPRO4IN1_13.jpg?v=1768494346&width=1400" alt="" loading="lazy">
-    </div>
-    <div class="h-slide" id="hS3">
-      <img src="https://vgrofficial.in/cdn/shop/files/1745289837240_V-STEPLESSPRO4IN1_5.jpg?v=1768494346&width=1400" alt="" loading="lazy">
-    </div>
-  </div>
-  <div class="h-glow"></div>
-  <div class="h-grain"></div>
-  <div class="h-veil"></div>
 
-  <!-- Content -->
+  <!-- Mobile: video fills background -->
+  <div class="hero-vid-bg">
+    <video autoplay muted loop playsinline preload="auto" poster="vgr-hero-poster.jpg" id="heroVid">
+      <source src="vgr-hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-vid-overlay"></div>
+  <div class="h-glow"></div>
+
+  <!-- Left panel (text) — becomes left half on desktop -->
   <div class="h-body">
-    <div class="h-kicker"><span class="h-kicker-line"></span>India's No. 1 Grooming Brand · New Launch 2026</div>
+    <div class="h-kicker"><span class="h-kicker-line"></span>India's No. 1 Grooming Brand</div>
     <h1 class="h-headline">The <em>Professional</em><br>Choice.</h1>
     <p class="h-sub">Engineered for barbers. Built for everyday use. Trusted by 50,000+ customers across India.</p>
     <div class="h-actions">
@@ -711,23 +771,27 @@ img{display:block;max-width:100%}
     </div>
   </div>
 
+  <!-- Right panel (video) — desktop only -->
+  <div class="hero-vid-panel">
+    <video autoplay muted loop playsinline preload="auto" poster="vgr-hero-poster.jpg" id="heroVidD">
+      <source src="vgr-hero.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Sound toggle -->
+  <button class="h-sound" id="soundBtn" onclick="toggleSound()" aria-label="Toggle sound" title="Toggle sound">
+    <svg id="soundOff" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    <svg id="soundOn" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+
   <!-- Proof bar -->
   <div class="h-proof">
     <div class="h-pf"><div class="h-pf-n">50K+</div><div class="h-pf-l">Happy Buyers</div></div>
-    <div class="h-pf"><div class="h-pf-n">4.7★</div><div class="h-pf-l">Avg Rating</div></div>
+    <div class="h-pf"><div class="h-pf-n">4.7&#9733;</div><div class="h-pf-l">Avg Rating</div></div>
     <div class="h-pf"><div class="h-pf-n">2 Yr</div><div class="h-pf-l">Warranty</div></div>
     <div class="h-pf"><div class="h-pf-n">Free</div><div class="h-pf-l">Prepaid Ship</div></div>
   </div>
 
-  <!-- Slide controls -->
-  <button class="h-arr l" id="hPrv" aria-label="Previous">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-  </button>
-  <button class="h-arr r" id="hNxt" aria-label="Next">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
-  <div class="h-dots" id="hDots"></div>
-  <div class="h-prog"><div class="h-pf-prog" id="hPFprog"></div></div>
 </section>
 
 <!-- ===================== MARQUEE ===================== -->
@@ -1321,101 +1385,41 @@ window.addEventListener('load', () => {
   }, 2100);
 });
 
-/* ========= HERO IMAGE PRELOAD ========= */
-(function(){
-  ['https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=1400',
-   'https://vgrofficial.in/cdn/shop/files/Artboard_13_copy_2.png?width=1400',
-   'https://vgrofficial.in/cdn/shop/files/1745289851729_V-STEPLESSPRO4IN1_13.jpg?v=1768494346&width=1400',
-   'https://vgrofficial.in/cdn/shop/files/1745289837240_V-STEPLESSPRO4IN1_5.jpg?v=1768494346&width=1400'
-  ].forEach(s=>{ const i=new Image(); i.src=s; });
-})();
+/* ========= HERO VIDEO SETUP ========= */
+const heroEl = document.getElementById('hero');
+const vidMobile = document.getElementById('heroVid');
+const vidDesktop = document.getElementById('heroVidD');
 
-/* ========= HERO PARALLAX ========= */
-const hBg = document.getElementById('hBg');
-const hero = document.getElementById('hero');
-let parallaxTick = false;
-window.addEventListener('scroll', () => {
-  if (!parallaxTick) {
-    requestAnimationFrame(() => {
-      const sy = window.scrollY;
-      // Only parallax while hero is visible
-      if (sy < window.innerHeight * 1.4) {
-        hBg.style.transform = 'translate3d(0,' + (sy * 0.32) + 'px,0)';
-      }
-      parallaxTick = false;
-    });
-    parallaxTick = true;
-  }
-}, { passive: true });
+// Sync whichever video is active (based on viewport)
+function getActiveVid() {
+  return window.innerWidth >= 1024 ? vidDesktop : vidMobile;
+}
 
-/* ========= NAV STATE ON SCROLL ========= */
+// NAV state on scroll
 const nav = document.getElementById('mainNav');
-const heroH = () => hero.offsetHeight;
 window.addEventListener('scroll', () => {
-  if (window.scrollY > heroH() - 80) {
-    nav.classList.remove('over-hero');
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.add('over-hero');
-    nav.classList.remove('scrolled');
-  }
+  const threshold = heroEl.offsetHeight - 80;
+  nav.classList.toggle('over-hero', window.scrollY <= threshold);
+  nav.classList.toggle('scrolled', window.scrollY > threshold);
 }, { passive: true });
 
-/* ========= HERO CAROUSEL (fade between slides) ========= */
-const SLIDES = 4, FIRST_IV = 4500, REG_IV = 4000;
-let cur = 0, hTimer = null, pTicker = null, pv = 0;
-const slides = [document.getElementById('hS0'), document.getElementById('hS1'), document.getElementById('hS2'), document.getElementById('hS3')];
-const dotsWrap = document.getElementById('hDots');
-const pfBar = document.getElementById('hPFprog');
-
-for (let i = 0; i < SLIDES; i++) {
-  const b = document.createElement('button');
-  b.className = 'h-dot' + (i===0?' on':'');
-  b.setAttribute('aria-label','Slide '+(i+1));
-  b.onclick = () => jumpH(i);
-  dotsWrap.appendChild(b);
-}
-const getDots = () => dotsWrap.querySelectorAll('.h-dot');
-
-function goH(n) {
-  slides[cur].classList.remove('active');
-  getDots()[cur].classList.remove('on');
-  cur = ((n % SLIDES) + SLIDES) % SLIDES;
-  slides[cur].classList.add('active');
-  getDots()[cur].classList.add('on');
+/* ========= SOUND TOGGLE ========= */
+let soundOn = false;
+function toggleSound() {
+  soundOn = !soundOn;
+  [vidMobile, vidDesktop].forEach(v => { if (v) v.muted = !soundOn; });
+  document.getElementById('soundOff').style.display = soundOn ? 'none' : 'block';
+  document.getElementById('soundOn').style.display  = soundOn ? 'block' : 'none';
 }
 
-function startProg(dur) {
-  clearInterval(pTicker); pv = 0;
-  pfBar.style.transition = 'none'; pfBar.style.width = '0%';
-  const tick = 60;
-  pTicker = setInterval(() => {
-    pv += (tick / dur) * 100;
-    if (pv >= 100) { pv = 100; clearInterval(pTicker); }
-    pfBar.style.transition = 'width 0.06s linear';
-    pfBar.style.width = pv + '%';
-  }, 60);
-}
-
-function scheduleH(delay) {
-  clearTimeout(hTimer);
-  startProg(delay);
-  hTimer = setTimeout(() => { goH(cur+1); scheduleH(REG_IV); }, delay);
-}
-function jumpH(n) { goH(n); scheduleH(REG_IV); }
-
-document.getElementById('hNxt').onclick = () => jumpH(cur+1);
-document.getElementById('hPrv').onclick = () => jumpH(cur-1);
-
-// Touch swipe on hero
-let tx0 = 0;
-hero.addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; }, { passive: true });
-hero.addEventListener('touchend', e => {
-  const d = e.changedTouches[0].clientX - tx0;
-  if (Math.abs(d) > 40) jumpH(d < 0 ? cur+1 : cur-1);
-}, { passive: true });
-
-goH(0); scheduleH(FIRST_IV);
+/* ========= ENSURE AUTOPLAY ========= */
+document.addEventListener('DOMContentLoaded', () => {
+  [vidMobile, vidDesktop].forEach(v => {
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  });
+});
 
 /* ========= SCROLL REVEALS ========= */
 function initReveals() {
