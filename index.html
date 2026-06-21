@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a9790">
+<title>VGR Official — India's #1 Professional Grooming Brand</title>
+<meta name="description" content="Professional-grade hair clippers, trimmers and grooming kits. Up to 54% off. Free shipping. 2-year warranty. 50,000+ happy customers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=1400" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+
+/* ================================================================
+   TOKENS
+================================================================ */
+:root {
+  --teal:       #0a9790;
+  --teal-d:     #077870;
+  --teal-pale:  #e3f5f4;
+  --teal-soft:  #b8e8e6;
+  --teal-glow:  rgba(10,151,144,0.18);
+  --ink:        #0d1211;
+  --ink-2:      #3b3f3e;
+  --ink-3:      #797d7c;
+  --ink-4:      #b4b8b7;
+  --bg:         #ffffff;
+  --bg-2:       #f4f3f1;
+  --bg-3:       #edecea;
+  --line:       #e2e1df;
+  --green:      #197a44;
+  --green-bg:   #e9f7ef;
+  --red:        #e03535;
+  --amber:      #d97e0a;
+  --F:  'Bricolage Grotesque', sans-serif;
+  --Fb: 'DM Sans', sans-serif;
+  --r:  8px;
+  --r2: 14px;
+  --r3: 20px;
+  --pill: 999px;
+  --px: 22px;
+  --max: 1240px;
+  --sh1: 0 1px 3px rgba(0,0,0,0.05);
+  --sh2: 0 4px 16px rgba(0,0,0,0.08);
+  --sh3: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* ================================================================
+   RESET
+================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--Fb); background: var(--bg); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+button { font-family: var(--Fb); cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ================================================================
+   INNER WRAPPER
+================================================================ */
+.inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--px); }
+
+/* ================================================================
+   PRELOADER
+================================================================ */
+#PL {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--ink);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 32px;
+  transition: opacity 0.55s ease 0.1s, visibility 0.55s ease 0.1s;
+}
+#PL.gone { opacity: 0; visibility: hidden; pointer-events: none; }
+.pl-mark {
+  font-family: var(--F); font-size: 48px; font-weight: 800;
+  letter-spacing: -2px; color: #fff;
+}
+.pl-dot { color: var(--teal); display: inline-block; animation: plDot 0.6s 0.3s cubic-bezier(0.34,1.56,0.64,1) both; }
+@keyframes plDot { from { transform: translateY(60px) rotate(15deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.pl-sub { font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 4px; animation: plFu 0.5s 0.55s ease both; }
+.pl-bar { width: 80px; height: 1px; background: rgba(255,255,255,0.12); border-radius: 1px; overflow: hidden; }
+.pl-fill { height: 100%; width: 0; background: var(--teal); animation: plFill 1.9s 0.1s cubic-bezier(0.76,0,0.24,1) forwards; }
+@keyframes plFill { 0%{width:0} 40%{width:50%} 70%{width:74%} 90%{width:91%} 100%{width:100%} }
+@keyframes plFu { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+#PG { opacity: 0; transform: translateY(6px); transition: opacity 0.5s ease, transform 0.5s ease; }
+#PG.alive { opacity: 1; transform: none; }
+
+/* ================================================================
+   PROMO BAND
+================================================================ */
+.promo {
+  position: sticky; top: 0; z-index: 600;
+  background: var(--teal); height: 34px;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-size: 11.5px; font-weight: 600; color: #fff; letter-spacing: 0.015em;
+}
+.promo-sep { width: 1px; height: 12px; background: rgba(255,255,255,0.25); }
+.promo-code {
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+  padding: 2px 10px; border-radius: var(--pill);
+  font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em;
+}
+
+/* ================================================================
+   NAV
+================================================================ */
+.nav {
+  position: sticky; top: 34px; z-index: 590;
+  height: 58px;
+  transition: background 0.35s, box-shadow 0.35s;
+}
+.nav.over-hero { background: transparent; }
+.nav.scrolled {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 1px 0 var(--line);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto;
+  height: 100%; padding: 0 var(--px);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.nav-logo-img { height: 26px; width: auto; display: block; }
+.nav-logo-text { font-family: var(--F); font-size: 22px; font-weight: 800; color: var(--teal); display: none; }
+.nav-links { display: none; gap: 0; align-items: center; }
+.nav-link {
+  padding: 7px 14px; border-radius: var(--r);
+  font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+  transition: color 0.15s, background 0.15s; white-space: nowrap;
+}
+.nav.over-hero .nav-link { color: rgba(255,255,255,0.8); }
+.nav.over-hero .nav-link:hover { color: #fff; background: rgba(255,255,255,0.1); }
+.nav-link:hover { color: var(--teal); background: var(--teal-pale); }
+.nav-r { display: flex; gap: 4px; align-items: center; }
+.nav-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-2); position: relative;
+  transition: background 0.15s, color 0.15s;
+}
+.nav.over-hero .nav-btn { color: rgba(255,255,255,0.85); }
+.nav.over-hero .nav-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.nav-btn:hover { background: var(--bg-2); }
+.c-pip {
+  position: absolute; top: 3px; right: 3px;
+  background: var(--teal); color: #fff;
+  font-size: 8px; font-weight: 800;
+  width: 15px; height: 15px; border-radius: 50%;
+  display: none; align-items: center; justify-content: center;
+}
+.c-pip.on { display: flex; animation: pipPop 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+@keyframes pipPop { from{transform:scale(0)} to{transform:scale(1)} }
+
+/* ================================================================
+   HERO — PARALLAX FULL-VIEWPORT
+================================================================ */
+.hero {
+  position: relative;
+  height: 100svh; min-height: 620px; max-height: 960px;
+  overflow: hidden;
+  background: linear-gradient(155deg, #051a18 0%, #083a35 50%, #051a18 100%);
+  display: flex; align-items: flex-end;
+}
+
+/* Parallax bg layer — extra height so it doesn't clip when scrolling */
+.h-bg {
+  position: absolute; inset: -18% 0 0;
+  will-change: transform; z-index: 1;
+}
+.h-bg img { width: 100%; height: 118%; object-fit: cover; object-position: center top; opacity: 0.55; }
+
+/* Grain */
+.h-grain {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 180px; mix-blend-mode: overlay; opacity: 0.6;
+}
+
+/* Gradient veil */
+.h-veil {
+  position: absolute; inset: 0; z-index: 3;
+  background: linear-gradient(
+    180deg,
+    rgba(5,26,24,0.05) 0%,
+    rgba(5,26,24,0.0) 18%,
+    rgba(5,26,24,0.22) 52%,
+    rgba(5,26,24,0.88) 100%
+  );
+}
+
+/* Teal accent glow in top-left */
+.h-glow {
+  position: absolute; top: -20%; left: -10%; z-index: 2;
+  width: 60%; aspect-ratio: 1/1;
+  background: radial-gradient(circle, rgba(10,151,144,0.28) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+/* Content */
+.h-body {
+  position: relative; z-index: 10;
+  width: 100%; padding: 0 var(--px) 52px;
+  max-width: var(--max); margin: 0 auto;
+}
+.h-kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 18px;
+  animation: fadeUp 0.6s 2.2s cubic-bezier(0.22,1,0.36,1) both;
+}
+.h-kicker-line { width: 22px; height: 1.5px; background: var(--teal); border-radius: 1px; }
+.h-headline {
+  font-family: var(--F);
+  font-size: clamp(46px, 9vw, 96px);
+  font-weight: 800; line-height: 0.97; letter-spacing: -3px;
+  color: #fff; margin-bottom: 20px;
+  animation: fadeUp 0.65s 2.3s cubic-bezier(0.22,1,0.36,1) both;
+}
+.h-headline em { font-style: italic; color: var(--teal); font-weight: 300; }
+.h-sub {
+  font-size: clamp(14px, 1.6vw, 16px); font-weight: 400; color: rgba(255,255,255,0.58);
+  max-width: 420px; line-height: 1.6; margin-bottom: 30px;
+  animation: fadeUp 0.6s 2.45s cubic-bezier(0.22,1,0.36,1) both;
+}
+.h-actions {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  animation: fadeUp 0.55s 2.6s cubic-bezier(0.22,1,0.36,1) both;
+}
+.h-btn-primary {
+  padding: 14px 28px; border-radius: var(--pill);
+  background: var(--teal); color: #fff;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.01em;
+  cursor: pointer; transition: background 0.18s, transform 0.13s;
+}
+.h-btn-primary:hover { background: var(--teal-d); }
+.h-btn-primary:active { transform: scale(0.97); }
+.h-btn-ghost {
+  padding: 13px 24px; border-radius: var(--pill);
+  border: 1.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.85);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+}
+.h-btn-ghost:hover { border-color: rgba(255,255,255,0.65); color: #fff; background: rgba(255,255,255,0.06); }
+
+/* Proof bar inside hero */
+.h-proof {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  background: rgba(5,26,24,0.5);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  animation: fadeUp 0.5s 2.75s cubic-bezier(0.22,1,0.36,1) both;
+}
+.h-pf {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 12px 8px; gap: 2px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.h-pf:last-child { border-right: none; }
+.h-pf-n { font-family: var(--F); font-size: 15px; font-weight: 800; color: var(--teal); line-height: 1; }
+.h-pf-l { font-size: 9px; font-weight: 500; color: rgba(255,255,255,0.4); text-align: center; line-height: 1.3; letter-spacing: 0.04em; }
+
+/* Hero carousel nav */
+.h-arr {
+  position: absolute; z-index: 12;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  transition: background 0.2s; top: 50%; transform: translateY(-50%);
+}
+.h-arr:hover { background: rgba(255,255,255,0.18); }
+.h-arr.l { left: var(--px); }
+.h-arr.r { right: var(--px); }
+.h-track { display: flex; height: 100%; will-change: transform; transition: transform 0.7s cubic-bezier(0.77,0,0.18,1); }
+.h-slide { flex-shrink: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0; transition: opacity 0.7s ease; }
+.h-slide.active { opacity: 1; pointer-events: all; }
+.h-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.h-dots { position: absolute; bottom: 68px; left: var(--px); display: flex; gap: 6px; z-index: 11; }
+.h-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.28); border: none; padding: 0; cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.h-dot.on { width: 22px; border-radius: 3px; background: var(--teal); }
+.h-prog { position: absolute; bottom: 0; left: 0; right: 0; z-index: 13; height: 2px; background: rgba(255,255,255,0.06); }
+.h-pf-prog { height: 100%; background: var(--teal); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+
+/* ================================================================
+   MARQUEE
+================================================================ */
+.marquee-wrap { background: var(--ink); height: 34px; overflow: hidden; display: flex; align-items: center; }
+.marquee-track { display: flex; white-space: nowrap; animation: mq 28s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+.mi {
+  display: inline-flex; align-items: center; gap: 18px; padding: 0 18px;
+  font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.mi-sep { width: 2px; height: 2px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+@keyframes mq { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ================================================================
+   SECTION ANATOMY
+================================================================ */
+.sec { padding: 72px 0; }
+.sec-lg { padding: 96px 0; }
+.sec-sm { padding: 48px 0; }
+.kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 14px;
+}
+.kicker::before { content: ''; width: 20px; height: 1.5px; background: var(--teal); border-radius: 1px; display: block; }
+.display {
+  font-family: var(--F);
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 800; letter-spacing: -1.5px; line-height: 1.04;
+  color: var(--ink);
+}
+.display.on-dark { color: #fff; }
+.sec-sub { font-size: 15px; color: var(--ink-3); margin-top: 10px; line-height: 1.6; max-width: 520px; }
+.sec-sub.on-dark { color: rgba(255,255,255,0.48); }
+
+/* ================================================================
+   REVEAL ANIMATIONS
+================================================================ */
+.rv { opacity: 0; transform: translateY(28px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+.rv.in { opacity: 1; transform: none; }
+.rl { opacity: 0; transform: translateX(-28px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+.rl.in { opacity: 1; transform: none; }
+.rr { opacity: 0; transform: translateX(28px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+.rr.in { opacity: 1; transform: none; }
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d4{transition-delay:.32s}.d5{transition-delay:.40s}.d6{transition-delay:.48s}
+
+/* ================================================================
+   DIVIDER
+================================================================ */
+.sdiv { height: 1px; background: var(--line); }
+.sdiv-fat { height: 8px; background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+/* ================================================================
+   EDITORIAL CATEGORY CARDS — The Signature Element
+   Portrait lookbook cards, like a fashion brand
+================================================================ */
+.cat-sec { padding: 72px 0 0; background: var(--bg); }
+.cat-header { padding: 0 var(--px) 32px; max-width: var(--max); margin: 0 auto; }
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+.cat-card {
+  position: relative; overflow: hidden;
+  aspect-ratio: 16/10;
+  background: var(--ink);
+  display: block;
+}
+.cat-img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  opacity: 0.72;
+  transition: transform 0.72s cubic-bezier(0.22,1,0.36,1), opacity 0.4s ease;
+  will-change: transform;
+}
+.cat-card:hover .cat-img { transform: scale(1.06); opacity: 0.55; }
+.cat-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 28%, rgba(5,20,18,0.78) 100%);
+}
+.cat-body {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 22px 22px;
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.cat-info {}
+.cat-kicker { font-size: 9.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; }
+.cat-name { font-family: var(--F); font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: #fff; line-height: 1.05; letter-spacing: -0.5px; }
+.cat-count { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.cat-arrow {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.06);
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  flex-shrink: 0; margin-left: 12px;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.cat-card:hover .cat-arrow { background: var(--teal); border-color: var(--teal); transform: rotate(-45deg); }
+
+/* ================================================================
+   FLAGSHIP DARK SECTION
+================================================================ */
+.flagship {
+  background: var(--ink);
+  padding: 80px 0;
+  overflow: hidden; position: relative;
+}
+.fl-glow-1 {
+  position: absolute; top: -30%; left: -10%;
+  width: 60%; aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(10,151,144,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+.fl-glow-2 {
+  position: absolute; bottom: -20%; right: -5%;
+  width: 45%; aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(10,151,144,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.fl-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--px);
+  display: flex; flex-direction: column; gap: 48px;
+}
+.fl-text { flex: 1; }
+.fl-kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.fl-kicker::before { content: ''; width: 20px; height: 1.5px; background: var(--teal); display: block; }
+.fl-title { font-family: var(--F); font-size: clamp(32px, 5vw, 56px); font-weight: 800; color: #fff; line-height: 1.06; letter-spacing: -1.5px; margin-bottom: 24px; }
+.fl-specs { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.fl-spec {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--r2);
+}
+.fl-spec-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+.fl-spec-text { font-size: 13.5px; color: rgba(255,255,255,0.75); font-weight: 500; }
+.fl-spec-val { font-size: 13px; font-weight: 700; color: #fff; margin-left: auto; }
+.fl-price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+.fl-sale { font-family: var(--F); font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: #fff; letter-spacing: -1px; }
+.fl-mrp { font-size: 16px; color: rgba(255,255,255,0.28); text-decoration: line-through; }
+.fl-save { font-size: 12px; font-weight: 700; color: var(--teal); background: rgba(10,151,144,0.15); border: 1px solid rgba(10,151,144,0.28); padding: 4px 11px; border-radius: var(--r); }
+.fl-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 30px; border-radius: var(--pill);
+  background: var(--teal); color: #fff;
+  font-size: 14px; font-weight: 700;
+  transition: background 0.18s, transform 0.13s; cursor: pointer;
+}
+.fl-cta:hover { background: var(--teal-d); }
+.fl-cta:active { transform: scale(0.97); }
+.fl-img-wrap { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 280px; position: relative; }
+.fl-img-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(10,151,144,0.22) 0%, transparent 65%);
+  pointer-events: none;
+}
+.fl-img-inner { animation: floatY 4.5s ease-in-out infinite; }
+@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+.fl-img-inner img { max-height: 360px; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 24px 40px rgba(0,0,0,0.5)); }
+
+/* ================================================================
+   COLLECTION SECTION
+================================================================ */
+.col-sec { padding: 72px 0 56px; background: var(--bg); }
+.col-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.col-count { font-size: 13px; font-weight: 600; color: var(--ink-3); }
+.filter-row { display: flex; gap: 8px; margin-bottom: 28px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.filter-row::-webkit-scrollbar { display: none; }
+.f-chip {
+  flex-shrink: 0; padding: 8px 18px;
+  background: var(--bg-2); border: 1.5px solid var(--line);
+  border-radius: var(--pill);
+  font-size: 12.5px; font-weight: 600; color: var(--ink-2); cursor: pointer;
+  transition: all 0.18s; white-space: nowrap;
+}
+.f-chip:hover { border-color: var(--teal-soft); }
+.f-chip.on { background: var(--teal); border-color: var(--teal); color: #fff; box-shadow: 0 3px 12px rgba(10,151,144,0.28); }
+
+/* Product grid */
+.pgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Product card — entire card is a link */
+.pcard {
+  display: flex; flex-direction: column;
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r2); overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: box-shadow 0.25s, transform 0.22s, border-color 0.22s;
+  position: relative;
+}
+.pcard:hover { box-shadow: var(--sh3); transform: translateY(-4px); border-color: rgba(10,151,144,0.25); }
+.pcard:active { transform: scale(0.97) translateY(0); box-shadow: var(--sh1); }
+.pcard.hidden { display: none; }
+
+/* Image */
+.pc-img-wrap { position: relative; aspect-ratio: 1/1; background: var(--bg-2); overflow: hidden; }
+.pc-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+.pcard:hover .pc-img-wrap img { transform: scale(1.06); }
+
+/* Desktop hover CTA */
+.pc-hover {
+  position: absolute; inset: 0; z-index: 2;
+  background: rgba(10,151,144,0.82);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+}
+.pcard:hover .pc-hover { opacity: 1; }
+.pc-hover span {
+  color: #fff; font-size: 13px; font-weight: 700;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: var(--pill); padding: 9px 22px;
+}
+
+/* Badges */
+.pc-badge {
+  position: absolute; top: 9px; left: 9px; z-index: 3;
+  font-size: 9.5px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.05em; padding: 3px 8px; border-radius: var(--r);
+}
+.b-deal { background: var(--red); color: #fff; }
+.b-seller { background: var(--teal); color: #fff; }
+.b-rated { background: var(--green); color: #fff; }
+.b-new { background: var(--amber); color: #fff; }
+
+.pc-heart {
+  position: absolute; top: 8px; right: 8px; z-index: 3;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(255,255,255,0.88);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: var(--ink-3); cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+.pc-heart.on { color: var(--red); }
+.pc-heart:active { transform: scale(0.82); }
+
+/* Info */
+.pc-info { padding: 12px 11px 13px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.pc-name { font-family: var(--F); font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pc-rating { display: flex; align-items: center; gap: 4px; }
+.pc-stars { color: #f5c540; font-size: 10.5px; }
+.pc-rc { font-size: 10px; color: var(--ink-4); }
+.pc-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+.pc-sp { font-family: var(--F); font-size: 16px; font-weight: 800; color: var(--teal); letter-spacing: -0.3px; }
+.pc-mp { font-size: 11px; color: var(--ink-4); text-decoration: line-through; }
+.pc-sv { font-size: 10px; font-weight: 700; color: var(--green); background: var(--green-bg); padding: 2px 6px; border-radius: 4px; }
+.pc-free { font-size: 10.5px; font-weight: 600; color: var(--green); margin-top: 1px; }
+.pc-btn {
+  margin-top: auto; padding: 9px 0;
+  background: var(--teal-pale); border: 1px solid var(--teal-soft);
+  border-radius: var(--r); color: var(--teal);
+  font-size: 12px; font-weight: 700; width: 100%; cursor: pointer;
+  transition: background 0.18s, color 0.18s; position: relative; overflow: hidden;
+}
+.pc-btn:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+.pc-btn.ok { background: var(--green-bg); color: var(--green); border-color: transparent; }
+.rpl { position: absolute; border-radius: 50%; background: rgba(10,151,144,0.18); transform: scale(0); animation: rplAnim 0.54s ease-out; pointer-events: none; }
+@keyframes rplAnim { to { transform: scale(5); opacity: 0; } }
+
+/* ================================================================
+   STATS SECTION — DARK
+================================================================ */
+.stats-sec {
+  background: var(--ink); padding: 80px 0;
+  position: relative; overflow: hidden;
+}
+.stats-glow {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 80%; aspect-ratio: 2/1;
+  background: radial-gradient(ellipse, rgba(10,151,144,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; border: 1px solid rgba(255,255,255,0.06); border-radius: var(--r2); overflow: hidden; }
+.stat-item {
+  padding: 36px 24px; background: rgba(255,255,255,0.02);
+  display: flex; flex-direction: column; gap: 6px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.stat-num-row { display: flex; align-items: baseline; gap: 2px; }
+.stat-num { font-family: var(--F); font-size: clamp(36px, 6vw, 60px); font-weight: 800; color: #fff; letter-spacing: -2px; line-height: 1; }
+.stat-suffix { font-family: var(--F); font-size: clamp(20px, 3vw, 32px); font-weight: 700; color: var(--teal); }
+.stat-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 0.1em; }
+.stats-quote {
+  margin-top: 52px; text-align: center;
+  font-family: var(--F); font-size: clamp(18px, 3vw, 28px); font-weight: 500;
+  color: rgba(255,255,255,0.55); line-height: 1.4; letter-spacing: -0.4px;
+  font-style: italic;
+}
+.stats-quote strong { color: #fff; font-style: normal; }
+
+/* ================================================================
+   TESTIMONIALS
+================================================================ */
+.testi-sec { padding: 72px 0; background: var(--bg-2); }
+.testi-scroll {
+  display: flex; gap: 14px;
+  padding: 4px var(--px) 20px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.testi-scroll::-webkit-scrollbar { display: none; }
+.testi-card {
+  flex-shrink: 0; width: 300px;
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r3); padding: 22px 20px;
+  box-shadow: var(--sh1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.testi-card:hover { transform: translateY(-3px); box-shadow: var(--sh2); }
+.testi-stars { color: #f5c540; font-size: 14px; letter-spacing: 1px; margin-bottom: 12px; }
+.testi-quote { font-size: 13.5px; color: var(--ink-2); line-height: 1.7; margin-bottom: 14px; }
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.testi-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--teal-pale); border: 1px solid var(--teal-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--F); font-size: 13px; font-weight: 800; color: var(--teal);
+  flex-shrink: 0;
+}
+.testi-meta { flex: 1; }
+.testi-name { font-family: var(--F); font-size: 13px; font-weight: 700; color: var(--ink); }
+.testi-product { font-size: 11px; color: var(--ink-3); margin-top: 1px; }
+.testi-vfy { font-size: 10.5px; font-weight: 700; color: var(--green); background: var(--green-bg); padding: 2px 8px; border-radius: var(--pill); }
+
+/* ================================================================
+   BUDGET SECTION
+================================================================ */
+.budget-sec { padding: 64px 0; background: var(--bg); }
+.budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+.bud {
+  background: var(--bg-2); border: 1.5px solid var(--line);
+  border-radius: var(--r2); padding: 20px 16px;
+  display: flex; flex-direction: column; gap: 4px;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.bud::before { content: ''; position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-radius: 50%; background: var(--teal-glow); }
+.bud:hover { border-color: var(--teal-soft); box-shadow: var(--sh2); }
+.bud:active { transform: scale(0.96); }
+.bud.span2 { grid-column: 1/-1; flex-direction: row; align-items: center; justify-content: space-between; }
+.bud-under { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+.bud-price { font-family: var(--F); font-size: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.6px; line-height: 1; }
+.bud-arr { font-size: 20px; color: var(--teal); }
+
+/* ================================================================
+   PARTNERS
+================================================================ */
+.partners-sec { padding: 56px 0; background: var(--bg-2); }
+.partners-row { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+.partners-row::-webkit-scrollbar { display: none; }
+.partner-tile {
+  flex-shrink: 0; min-width: 100px;
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: var(--r2); height: 48px; padding: 10px 14px;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.partner-tile:hover { border-color: var(--ink-4); box-shadow: var(--sh1); transform: translateY(-1px); }
+.partner-tile img { max-height: 22px; max-width: 80px; width: auto; object-fit: contain; }
+
+/* ================================================================
+   FAQ
+================================================================ */
+.faq-sec { padding: 64px 0; background: var(--bg); }
+.fq-list { margin-top: 28px; }
+.fq-item { border-bottom: 1px solid var(--line); }
+.fq-btn {
+  width: 100%; background: none; border: none;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; gap: 16px; text-align: left; cursor: pointer;
+  font-family: var(--F); font-size: 15px; font-weight: 700; color: var(--ink);
+  transition: color 0.15s;
+}
+.fq-btn:hover { color: var(--teal); }
+.fq-ic {
+  width: 24px; height: 24px; flex-shrink: 0; border-radius: 50%;
+  background: var(--bg-2); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 300; color: var(--ink-3); line-height: 1;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), background 0.2s, color 0.2s;
+}
+.fq-item.op .fq-ic { transform: rotate(45deg); background: var(--teal-pale); border-color: var(--teal-soft); color: var(--teal); }
+.fq-ans { max-height: 0; overflow: hidden; transition: max-height 0.36s ease; }
+.fq-ans.op { max-height: 320px; }
+.fq-ans p { font-size: 14px; color: var(--ink-2); line-height: 1.75; padding-bottom: 16px; }
+
+/* ================================================================
+   FOOTER
+================================================================ */
+.footer { background: var(--ink); padding: 64px 0 40px; }
+.footer-top {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--px);
+  display: flex; flex-direction: column; gap: 40px;
+  padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 32px;
+}
+.footer-brand-mark { font-family: var(--F); font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+.footer-brand-mark span { color: var(--teal); }
+.footer-brand-sub { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 6px; max-width: 280px; line-height: 1.6; }
+.footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.footer-col-title { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+.footer-link { display: block; font-size: 13.5px; color: rgba(255,255,255,0.55); padding: 4px 0; transition: color 0.15s; }
+.footer-link:hover { color: #fff; }
+.footer-social { display: flex; gap: 10px; margin-top: 20px; }
+.soc-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.soc-btn:hover { background: rgba(10,151,144,0.2); border-color: var(--teal); color: var(--teal); }
+.footer-bottom { max-width: var(--max); margin: 0 auto; padding: 0 var(--px); display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; }
+.footer-copy { font-size: 11.5px; color: rgba(255,255,255,0.22); }
+.footer-contact { font-size: 11.5px; color: rgba(255,255,255,0.28); }
+
+/* ================================================================
+   BACK TO TOP
+================================================================ */
+.btt {
+  position: fixed; bottom: 24px; right: 24px; z-index: 400;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--teal); color: #fff; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 18px rgba(10,151,144,0.42);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: scale(0.65) translateY(10px);
+  transition: opacity 0.28s, visibility 0.28s, transform 0.28s cubic-bezier(0.34,1.56,0.64,1);
+}
+.btt.on { opacity: 1; visibility: visible; pointer-events: all; transform: scale(1) translateY(0); }
+.btt:hover { background: var(--teal-d); }
+
+/* ================================================================
+   DESKTOP — 768px+
+================================================================ */
+@media (min-width: 768px) {
+  :root { --px: 36px; }
+  .cat-grid { grid-template-columns: repeat(3, 1fr); gap: 3px; }
+  .cat-card { aspect-ratio: 2/3; }
+  .cat-name { font-size: 32px; }
+  .fl-inner { flex-direction: row; align-items: center; gap: 60px; }
+  .fl-text { flex: 5; }
+  .fl-img-wrap { flex: 5; min-height: 380px; }
+  .pgrid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .budget-grid { grid-template-columns: repeat(4, 1fr); }
+  .bud.span2 { grid-column: auto; flex-direction: column; align-items: flex-start; }
+  .footer-top { flex-direction: row; align-items: flex-start; gap: 60px; }
+  .footer-brand-wrap { flex: 1; max-width: 260px; }
+  .footer-cols { flex: 2; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .h-proof { display: flex; }
+  .sec { padding: 88px 0; }
+  .testi-card { width: 360px; }
+}
+
+/* ================================================================
+   DESKTOP — 1024px+
+================================================================ */
+@media (min-width: 1024px) {
+  :root { --px: 48px; }
+  .nav-links { display: flex; }
+  .hero { max-height: 860px; }
+  .pgrid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cat-card { aspect-ratio: 7/10; }
+  .fl-img-inner img { max-height: 460px; }
+  .stats-grid { border-radius: var(--r3); }
+  .budget-grid { grid-template-columns: repeat(5, 1fr); }
+  .bud.span2 { grid-column: auto; }
+  .testi-scroll { padding: 4px var(--px) 28px; gap: 18px; }
+  .testi-card { width: 400px; }
+}
+
+@media (min-width: 1280px) {
+  :root { --px: 60px; }
+}
+
+/* ================================================================
+   MOBILE — small tweaks
+================================================================ */
+@media (max-width: 480px) {
+  .pgrid { gap: 8px; }
+  .pc-name { font-size: 12.5px; }
+  .pc-sp { font-size: 15px; }
+  .h-headline { letter-spacing: -2px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===================== PRELOADER ===================== -->
+<div id="PL">
+  <div style="text-align:center">
+    <div class="pl-mark">VGR<span class="pl-dot">.</span></div>
+    <div class="pl-sub">Official Store · India</div>
+  </div>
+  <div class="pl-bar"><div class="pl-fill"></div></div>
+</div>
+
+<div id="PG">
+
+<!-- ===================== PROMO BAND ===================== -->
+<div class="promo">
+  <span>Free Gift on Orders ₹5,100+</span>
+  <span class="promo-sep"></span>
+  <span class="promo-code">DAD10</span>
+  <span>Extra 10% Off</span>
+  <span class="promo-sep"></span>
+  <span>Free Shipping on Prepaid</span>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav over-hero" id="mainNav">
+  <div class="nav-inner">
+    <a href="https://vgrofficial.in/">
+      <img class="nav-logo-img" src="https://vgrofficial.in/cdn/shop/files/Logo_280X80_cff38248-ad69-4c01-912b-befe91c47a8a.png?v=1707980109&width=280"
+           alt="VGR Official"
+           onerror="this.style.display='none';document.querySelector('.nav-logo-text').style.display='block'">
+      <span class="nav-logo-text">VGR</span>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" href="https://vgrofficial.in/collections/new-arrival">New Arrivals</a>
+      <a class="nav-link" href="https://vgrofficial.in/collections/clipper">Clippers</a>
+      <a class="nav-link" href="https://vgrofficial.in/collections/hair-trimmer">Trimmers</a>
+      <a class="nav-link" href="https://vgrofficial.in/collections/hair-dryer">Hair Dryers</a>
+      <a class="nav-link" href="https://vgrofficial.in/collections/hair-straightener">Straighteners</a>
+    </nav>
+    <div class="nav-r">
+      <a class="nav-btn" href="https://vgrofficial.in/search" aria-label="Search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <button class="nav-btn" id="cartBtn" aria-label="Cart">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="c-pip" id="cpip">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <!-- Parallax bg layer (JS moves this) -->
+  <div class="h-bg" id="hBg">
+    <div class="h-slide active" id="hS0">
+      <img src="https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=1400" alt="" loading="eager" fetchpriority="high">
+    </div>
+    <div class="h-slide" id="hS1">
+      <img src="https://vgrofficial.in/cdn/shop/files/Artboard_13_copy_2.png?width=1400" alt="" loading="lazy">
+    </div>
+    <div class="h-slide" id="hS2">
+      <img src="https://vgrofficial.in/cdn/shop/files/1745289851729_V-STEPLESSPRO4IN1_13.jpg?v=1768494346&width=1400" alt="" loading="lazy">
+    </div>
+    <div class="h-slide" id="hS3">
+      <img src="https://vgrofficial.in/cdn/shop/files/1745289837240_V-STEPLESSPRO4IN1_5.jpg?v=1768494346&width=1400" alt="" loading="lazy">
+    </div>
+  </div>
+  <div class="h-glow"></div>
+  <div class="h-grain"></div>
+  <div class="h-veil"></div>
+
+  <!-- Content -->
+  <div class="h-body inner">
+    <div class="h-kicker"><span class="h-kicker-line"></span>India's No. 1 Grooming Brand · New Launch 2026</div>
+    <h1 class="h-headline">The <em>Professional</em><br>Choice.</h1>
+    <p class="h-sub">Engineered for barbers. Built for everyday use. Trusted by 50,000+ customers across India.</p>
+    <div class="h-actions">
+      <button class="h-btn-primary" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">Shop Collection</button>
+      <a class="h-btn-ghost" href="https://vgrofficial.in/products/vgr-mr-super-power-stepless-pro-4-in-1-barber">See Flagship</a>
+    </div>
+  </div>
+
+  <!-- Proof bar -->
+  <div class="h-proof">
+    <div class="h-pf"><div class="h-pf-n">50K+</div><div class="h-pf-l">Happy Buyers</div></div>
+    <div class="h-pf"><div class="h-pf-n">4.7★</div><div class="h-pf-l">Avg Rating</div></div>
+    <div class="h-pf"><div class="h-pf-n">2 Yr</div><div class="h-pf-l">Warranty</div></div>
+    <div class="h-pf"><div class="h-pf-n">Free</div><div class="h-pf-l">Prepaid Ship</div></div>
+  </div>
+
+  <!-- Slide controls -->
+  <button class="h-arr l" id="hPrv" aria-label="Previous">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="h-arr r" id="hNxt" aria-label="Next">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="h-dots" id="hDots"></div>
+  <div class="h-prog"><div class="h-pf-prog" id="hPFprog"></div></div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="mi">4-in-1 Barber Kit<span class="mi-sep"></span></span>
+    <span class="mi">Stepless Speed Control<span class="mi-sep"></span></span>
+    <span class="mi">260 Min Runtime<span class="mi-sep"></span></span>
+    <span class="mi">LED Display<span class="mi-sep"></span></span>
+    <span class="mi">Type-C Charging<span class="mi-sep"></span></span>
+    <span class="mi">2-Year Warranty<span class="mi-sep"></span></span>
+    <span class="mi">Pan-India Delivery<span class="mi-sep"></span></span>
+    <span class="mi">BIS Certified<span class="mi-sep"></span></span>
+    <span class="mi">4-in-1 Barber Kit<span class="mi-sep"></span></span>
+    <span class="mi">Stepless Speed Control<span class="mi-sep"></span></span>
+    <span class="mi">260 Min Runtime<span class="mi-sep"></span></span>
+    <span class="mi">LED Display<span class="mi-sep"></span></span>
+    <span class="mi">Type-C Charging<span class="mi-sep"></span></span>
+    <span class="mi">2-Year Warranty<span class="mi-sep"></span></span>
+    <span class="mi">Pan-India Delivery<span class="mi-sep"></span></span>
+    <span class="mi">BIS Certified<span class="mi-sep"></span></span>
+  </div>
+</div>
+
+<!-- ===================== EDITORIAL CATEGORIES ===================== -->
+<section class="cat-sec">
+  <div class="cat-header inner">
+    <div class="kicker rv">Shop by Category</div>
+    <h2 class="display rv d1">The Collection.</h2>
+  </div>
+  <div class="cat-grid">
+
+    <a class="cat-card rv" href="https://vgrofficial.in/collections/clipper">
+      <img class="cat-img" src="https://vgrofficial.in/cdn/shop/files/Artboard_13_copy_2.png?width=800" alt="Professional Clippers" loading="lazy">
+      <div class="cat-overlay"></div>
+      <div class="cat-body">
+        <div class="cat-info">
+          <div class="cat-kicker">Shop Now</div>
+          <div class="cat-name">Professional<br>Clippers</div>
+          <div class="cat-count">Hair Clipper Range</div>
+        </div>
+        <div class="cat-arrow">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="cat-card rv d1" href="https://vgrofficial.in/collections/hair-trimmer">
+      <img class="cat-img" src="https://vgrofficial.in/cdn/shop/files/1_-_2025-11-29T172334.182.jpg?v=1764417667&width=800" alt="Hair Trimmers" loading="lazy">
+      <div class="cat-overlay"></div>
+      <div class="cat-body">
+        <div class="cat-info">
+          <div class="cat-kicker">Shop Now</div>
+          <div class="cat-name">Hair<br>Trimmers</div>
+          <div class="cat-count">Full Trimmer Range</div>
+        </div>
+        <div class="cat-arrow">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="cat-card rv d2" href="https://vgrofficial.in/products/vgr-mr-super-power-stepless-pro-4-in-1-barber">
+      <img class="cat-img" src="https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=800" alt="Grooming Kits" loading="lazy">
+      <div class="cat-overlay"></div>
+      <div class="cat-body">
+        <div class="cat-info">
+          <div class="cat-kicker">Shop Now</div>
+          <div class="cat-name">Grooming<br>Kits</div>
+          <div class="cat-count">Complete Sets</div>
+        </div>
+        <div class="cat-arrow">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ===================== FLAGSHIP SPOTLIGHT ===================== -->
+<section class="flagship">
+  <div class="fl-glow-1"></div>
+  <div class="fl-glow-2"></div>
+  <div class="fl-inner">
+
+    <div class="fl-text rv">
+      <div class="fl-kicker">Flagship 2026</div>
+      <h2 class="fl-title">Mr. Super Power<br>Stepless Pro 4-in-1</h2>
+      <div class="fl-specs">
+        <div class="fl-spec rv d1">
+          <span class="fl-spec-dot"></span>
+          <span class="fl-spec-text">Clipper + Trimmer + Shaver + Hair Dryer</span>
+          <span class="fl-spec-val">4-in-1</span>
+        </div>
+        <div class="fl-spec rv d2">
+          <span class="fl-spec-dot"></span>
+          <span class="fl-spec-text">Battery life — cordless runtime</span>
+          <span class="fl-spec-val">260 min</span>
+        </div>
+        <div class="fl-spec rv d3">
+          <span class="fl-spec-dot"></span>
+          <span class="fl-spec-text">Hair dryer BLDC motor speed</span>
+          <span class="fl-spec-val">110,000 RPM</span>
+        </div>
+        <div class="fl-spec rv d4">
+          <span class="fl-spec-dot"></span>
+          <span class="fl-spec-text">Speed settings across all tools</span>
+          <span class="fl-spec-val">21 + 40</span>
+        </div>
+      </div>
+      <div class="fl-price rv d2">
+        <span class="fl-sale">₹32,999</span>
+        <span class="fl-mrp">₹50,000</span>
+        <span class="fl-save">Save ₹17,001</span>
+      </div>
+      <a class="fl-cta rv d3" href="https://vgrofficial.in/products/vgr-mr-super-power-stepless-pro-4-in-1-barber">
+        Shop Now
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <div class="fl-img-wrap rv rr">
+      <div class="fl-img-glow"></div>
+      <div class="fl-img-inner">
+        <img src="https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=700" alt="VGR Mr. Super Power 4-in-1 Barber Kit" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== COLLECTION GRID ===================== -->
+<section class="col-sec" id="collection">
+  <div class="inner">
+    <div class="kicker rv">All Products</div>
+    <div class="col-header rv d1">
+      <h2 class="display" style="font-size:clamp(26px,4vw,44px)">The Full Range.</h2>
+      <span class="col-count" id="prodCount">12 products</span>
+    </div>
+
+    <div class="filter-row rv d2">
+      <button class="f-chip on" data-cat="all" onclick="filterCat(this)">All</button>
+      <button class="f-chip" data-cat="clipper" onclick="filterCat(this)">Clippers</button>
+      <button class="f-chip" data-cat="trimmer" onclick="filterCat(this)">Trimmers</button>
+      <button class="f-chip" data-cat="kit" onclick="filterCat(this)">Grooming Kits</button>
+    </div>
+
+    <div class="pgrid" id="pgrid">
+
+      <!-- 1 VL-786 -->
+      <a class="pcard rv" href="https://vgrofficial.in/products/vgr-vl-786-professional-hair-clipper" data-cat="clipper" data-price="2299" data-pct="54" data-rating="4.7">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/Artboard_13_copy_2.png?width=500" alt="VGR VL-786 Professional Hair Clipper" loading="lazy">
+          <span class="pc-badge b-deal">HOT DEAL</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">VL-786 Professional Hair Clipper</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.7 (2,840)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;2,299</span><span class="pc-mp">&#8377;4,999</span><span class="pc-sv">&#8211;54%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 2 V-228 -->
+      <a class="pcard rv d1" href="https://vgrofficial.in/products/vgr-v-228-hair-trimmer-for-men" data-cat="trimmer" data-price="1899" data-pct="17" data-rating="4.7">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/1_-_2025-11-29T172334.182.jpg?v=1764417667&width=500" alt="VGR V-228 Hair Trimmer" loading="lazy">
+          <span class="pc-badge b-seller">BEST SELLER</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-228 Hair Trimmer For Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.7 (71)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,899</span><span class="pc-mp">&#8377;2,299</span><span class="pc-sv">&#8211;17%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 3 V-272 -->
+      <a class="pcard rv d2" href="https://vgrofficial.in/products/vgr-v-272-hair-trimmer-for-men" data-cat="trimmer" data-price="1304" data-pct="38" data-rating="4.7">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/272-1.webp?v=1740987284&width=500" alt="VGR V-272 Hair Trimmer" loading="lazy">
+          <span class="pc-badge b-seller">BEST SELLER</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-272 Hair Trimmer For Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.7 (45)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,304</span><span class="pc-mp">&#8377;2,099</span><span class="pc-sv">&#8211;38%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 4 V-008 -->
+      <a class="pcard rv d3" href="https://vgrofficial.in/products/vgr-v-008-hair-trimmer-for-men" data-cat="trimmer" data-price="1061" data-pct="38" data-rating="4.8">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/7.0.webp?v=1747829745&width=500" alt="VGR V-008 Hair Trimmer" loading="lazy">
+          <span class="pc-badge b-rated">TOP RATED</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-008 Hair Trimmer For Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.8 (38)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,061</span><span class="pc-mp">&#8377;1,699</span><span class="pc-sv">&#8211;38%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 5 V-105 -->
+      <a class="pcard rv d1" href="https://vgrofficial.in/products/vgr-v-105-5-in-1-grooming-kit-for-men-black" data-cat="kit" data-price="2599" data-pct="28" data-rating="4.4">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/1-13-1_1.webp?v=1740825167&width=500" alt="VGR V-105 Grooming Kit" loading="lazy">
+          <span class="pc-badge b-seller">GROOMING KIT</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-105 5-in-1 Grooming Kit for Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.4 (16)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;2,599</span><span class="pc-mp">&#8377;3,599</span><span class="pc-sv">&#8211;28%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 6 V-102 -->
+      <a class="pcard rv d2" href="https://vgrofficial.in/products/vgr-v-102-grooming-kit-for-men-army-green" data-cat="kit" data-price="2499" data-pct="31" data-rating="4.4">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/V-102-1_1.webp?v=1741149418&width=500" alt="VGR V-102 Grooming Kit" loading="lazy">
+          <span class="pc-badge b-seller">GROOMING KIT</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-102 Grooming Kit For Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="pc-rc">4.4 (15)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;2,499</span><span class="pc-mp">&#8377;3,599</span><span class="pc-sv">&#8211;31%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 7 V-055 -->
+      <a class="pcard rv d3" href="https://vgrofficial.in/products/vgr-v-055-hair-trimmer-for-men-black" data-cat="trimmer" data-price="999" data-pct="23" data-rating="4.7">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/1.1_34.jpg?v=1764417530&width=500" alt="VGR V-055 Hair Trimmer" loading="lazy">
+          <span class="pc-badge b-seller">BEST SELLER</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-055 Hair Trimmer For Men, Black</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.7 (59)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;999</span><span class="pc-mp">&#8377;1,299</span><span class="pc-sv">&#8211;23%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 8 V-290 -->
+      <a class="pcard rv d4" href="https://vgrofficial.in/products/vgr-v-290-hair-trimmer-for-men-gold" data-cat="trimmer" data-price="1299" data-pct="19" data-rating="4.7">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/13.webp?v=1760682705&width=500" alt="VGR V-290 Hair Trimmer" loading="lazy">
+          <span class="pc-badge b-new">NEW</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-290 Hair Trimmer For Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="pc-rc">4.7 (45)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,299</span><span class="pc-mp">&#8377;1,599</span><span class="pc-sv">&#8211;19%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 9 V-071 -->
+      <a class="pcard rv d1" href="https://vgrofficial.in/products/vgr-v-071-hair-trimmer-for-men-silver" data-cat="trimmer" data-price="999" data-pct="29" data-rating="4.5">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/1_-_2025-11-29T165614.742.jpg?v=1764417571&width=500" alt="VGR V-071 Silver" loading="lazy">
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-071 Hair Trimmer For Men, Silver</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="pc-rc">4.5 (64)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;999</span><span class="pc-mp">&#8377;1,399</span><span class="pc-sv">&#8211;29%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 10 V-176 -->
+      <a class="pcard rv d2" href="https://vgrofficial.in/products/vgr-v-176-hair-trimmer-for-men-green" data-cat="trimmer" data-price="1199" data-pct="20" data-rating="4.5">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/9_20717957-fd94-4065-a122-c8fff6bafc31.webp?v=1747830617&width=500" alt="VGR V-176 Green" loading="lazy">
+          <span class="pc-badge b-new">NEW</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-176 Hair Trimmer For Men, Green</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="pc-rc">4.5 (15)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,199</span><span class="pc-mp">&#8377;1,499</span><span class="pc-sv">&#8211;20%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 11 V-007 -->
+      <a class="pcard rv d3" href="https://vgrofficial.in/products/vgr-v-007-hair-trimmer-for-men-black" data-cat="trimmer" data-price="1034" data-pct="35" data-rating="4.5">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/8.0.webp?v=1740808751&width=500" alt="VGR V-007 Black" loading="lazy">
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-007 Hair Trimmer For Men, Black</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="pc-rc">4.5 (17)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,034</span><span class="pc-mp">&#8377;1,599</span><span class="pc-sv">&#8211;35%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+      <!-- 12 V-096 -->
+      <a class="pcard rv d4" href="https://vgrofficial.in/products/vgr-v-096-hair-trimmer-for-men" data-cat="trimmer" data-price="1439" data-pct="40" data-rating="4.4">
+        <div class="pc-img-wrap">
+          <img src="https://vgrofficial.in/cdn/shop/files/Hefff2d0c999d4fc997f0a32cc8ff6d777.jpg_960x960_78795003-1a24-4918-a055-5c7184c151eb_1.webp?v=1740823914&width=500" alt="VGR V-096" loading="lazy">
+          <span class="pc-badge b-deal">SALE</span>
+          <button class="pc-heart" onclick="event.preventDefault();toggleHeart(this)">&#9825;</button>
+          <div class="pc-hover"><span>View Product</span></div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-name">V-096 Hair Trimmer For Men</div>
+          <div class="pc-rating"><span class="pc-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span><span class="pc-rc">4.4 (16)</span></div>
+          <div class="pc-price"><span class="pc-sp">&#8377;1,439</span><span class="pc-mp">&#8377;2,399</span><span class="pc-sv">&#8211;40%</span></div>
+          <div class="pc-free">Free Delivery</div>
+          <button class="pc-btn" onclick="event.preventDefault();addCart(this)">Add to Cart</button>
+        </div>
+      </a>
+
+    </div><!-- /pgrid -->
+  </div>
+</section>
+
+<!-- ===================== STATS DARK SECTION ===================== -->
+<section class="stats-sec" id="statsSection">
+  <div class="stats-glow"></div>
+  <div class="inner">
+    <div class="kicker" style="color:rgba(10,151,144,0.8)"><span style="background:var(--teal);opacity:0.7;width:20px;height:1.5px;display:block;border-radius:1px"></span>Why VGR</div>
+    <h2 class="display on-dark rv" style="margin-bottom:40px;margin-top:12px">Numbers<br>don't lie.</h2>
+    <div class="stats-grid rv d1">
+      <div class="stat-item">
+        <div class="stat-num-row"><div class="stat-num" id="sn1">0</div><div class="stat-suffix">K+</div></div>
+        <div class="stat-label">Happy Buyers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-row"><div class="stat-num" id="sn2">4.0</div><div class="stat-suffix">&#9733;</div></div>
+        <div class="stat-label">Avg Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-row"><div class="stat-num">2</div><div class="stat-suffix">Yr</div></div>
+        <div class="stat-label">Warranty Cover</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num-row"><div class="stat-num">1&#8211;3</div><div class="stat-suffix">D</div></div>
+        <div class="stat-label">Pan-India Delivery</div>
+      </div>
+    </div>
+    <p class="stats-quote rv d2">"<strong>Engineered for barbers.</strong> Trusted by 50,000+ professionals and home users across India."</p>
+  </div>
+</section>
+
+<!-- ===================== BUDGET ===================== -->
+<section class="budget-sec">
+  <div class="inner">
+    <div class="kicker rv">Shop by Price</div>
+    <h2 class="display rv d1">Find your range.</h2>
+    <div class="budget-grid">
+      <a class="bud rv d1" href="https://vgrofficial.in/collections/product-under-800">
+        <div class="bud-under">Under</div><div class="bud-price">&#8377;800</div><div class="bud-arr">&#8594;</div>
+      </a>
+      <a class="bud rv d2" href="https://vgrofficial.in/collections/under-1000-models">
+        <div class="bud-under">Under</div><div class="bud-price">&#8377;1,000</div><div class="bud-arr">&#8594;</div>
+      </a>
+      <a class="bud rv d3" href="https://vgrofficial.in/collections/product-under-1500">
+        <div class="bud-under">Under</div><div class="bud-price">&#8377;1,500</div><div class="bud-arr">&#8594;</div>
+      </a>
+      <a class="bud rv d4" href="https://vgrofficial.in/collections/product-under-2000">
+        <div class="bud-under">Under</div><div class="bud-price">&#8377;2,000</div><div class="bud-arr">&#8594;</div>
+      </a>
+      <a class="bud span2 rv d5" href="https://vgrofficial.in/collections/product-under-2500">
+        <div><div class="bud-under">Under</div><div class="bud-price" style="font-size:30px">&#8377;2,500</div></div>
+        <div class="bud-arr" style="font-size:24px">&#8594;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testi-sec">
+  <div class="inner">
+    <div class="kicker rv">Customer Reviews</div>
+    <h2 class="display rv d1" style="margin-bottom:28px">50,000+ happy customers.</h2>
+  </div>
+  <div class="testi-scroll">
+    <div class="testi-card rv">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"Bought the 4-in-1 kit for my barbershop. The stepless control is a game changer — perfectly smooth fades every single time. The suitcase keeps everything organised."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">K</div>
+        <div class="testi-meta"><div class="testi-name">Karan M., Mumbai</div><div class="testi-product">Mr. Super Power 4-in-1</div></div>
+        <span class="testi-vfy">Verified</span>
+      </div>
+    </div>
+    <div class="testi-card rv d1">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"Got the VL-786 for home use. Build quality feels premium and the LED display is genuinely helpful. 200 minutes battery covers my whole month without charging."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div class="testi-meta"><div class="testi-name">Priya R., Delhi</div><div class="testi-product">VL-786 Professional Clipper</div></div>
+        <span class="testi-vfy">Verified</span>
+      </div>
+    </div>
+    <div class="testi-card rv d2">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"V-055 is excellent value for money. Sharp blades, comfortable grip, Type-C charging is very convenient. Warranty registration was simple. Highly recommended."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div class="testi-meta"><div class="testi-name">Rohan S., Bengaluru</div><div class="testi-product">V-055 Trimmer</div></div>
+        <span class="testi-vfy">Verified</span>
+      </div>
+    </div>
+    <div class="testi-card rv d3">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testi-quote">"V-272 delivered in two days. The blade is sharp out of the box and stays sharp. Great for fades. The motor is powerful and quiet — exactly what my clients expect."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div class="testi-meta"><div class="testi-name">Amit K., Barber — Delhi</div><div class="testi-product">V-272 Trimmer</div></div>
+        <span class="testi-vfy">Verified</span>
+      </div>
+    </div>
+    <div class="testi-card rv d4">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <p class="testi-quote">"The V-008 at this price point is unreal. 4.8 stars across 38 reviews and they're all deserved. My go-to recommendation for anyone starting out as a barber."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div class="testi-meta"><div class="testi-name">Sanjay P., Hyderabad</div><div class="testi-product">V-008 Trimmer</div></div>
+        <span class="testi-vfy">Verified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq-sec">
+  <div class="inner">
+    <div class="kicker rv">FAQs</div>
+    <h2 class="display rv d1" style="margin-bottom:0">Common questions.</h2>
+    <div class="fq-list">
+      <div class="fq-item rv d2" id="fq1">
+        <button class="fq-btn" onclick="fq('fq1')">What warranty does VGR offer?<span class="fq-ic">+</span></button>
+        <div class="fq-ans" id="fq1a"><p>All VGR products carry a 1+1 Year Warranty — 1 year standard, plus 1 year additional on registration at vgrofficial.in. Every product also comes with a 7-day replacement guarantee. For support: 1800 257 8939 (Toll Free) or customercare@vgrofficial.in.</p></div>
+      </div>
+      <div class="fq-item rv d3" id="fq2">
+        <button class="fq-btn" onclick="fq('fq2')">Is shipping free?<span class="fq-ic">+</span></button>
+        <div class="fq-ans" id="fq2a"><p>Yes — free shipping on all prepaid orders across India. Estimated delivery in 1–3 working days. Orders above ₹5,100 also include a free gift worth ₹1,299. Use code DAD10 for an extra 10% off.</p></div>
+      </div>
+      <div class="fq-item rv d4" id="fq3">
+        <button class="fq-btn" onclick="fq('fq3')">Do VGR products support corded and cordless use?<span class="fq-ic">+</span></button>
+        <div class="fq-ans" id="fq3a"><p>Most VGR clippers and trimmers support both corded and cordless operation via universal Type-C charging. Each product page lists the exact battery capacity and runtime for that model.</p></div>
+      </div>
+      <div class="fq-item rv d5" id="fq4">
+        <button class="fq-btn" onclick="fq('fq4')">What is included in the 4-in-1 Barber Kit?<span class="fq-ic">+</span></button>
+        <div class="fq-ans" id="fq4a"><p>The Mr. Super Power Stepless Pro 4-in-1 includes: a professional hair clipper (4600mAh, ceramic blades), a trimmer (2500mAh, DLC blades), a foil shaver (1400mAh, dual titanium foils), and a hair dryer (110,000 RPM BLDC motor). Plus 14 guide combs, magnetic attachments, LED spotlight, charging station, dryer stand, and a luxury storage suitcase.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNERS ===================== -->
+<section class="partners-sec">
+  <div class="inner">
+    <div class="kicker rv">Also Available On</div>
+    <div class="partners-row" style="margin-top:16px">
+      <a class="partner-tile rv" href="https://www.amazon.in/stores/VGRofficial/page/A0942DD1-E312-4DEB-9900-E58EF5DF211D">
+        <img src="https://vgrofficial.in/cdn/shop/files/amazon-logo.png?v=1679841638&width=150" alt="Amazon" loading="lazy">
+      </a>
+      <a class="partner-tile rv d1" href="https://www.flipkart.com/health-personal-care-appliances/personal-care-appliances/trimmers/vgr~brand/pr">
+        <img src="https://vgrofficial.in/cdn/shop/files/flipkart-logo.png?v=1679841661&width=150" alt="Flipkart" loading="lazy">
+      </a>
+      <a class="partner-tile rv d2" href="https://vgrofficial.in/">
+        <img src="https://vgrofficial.in/cdn/shop/files/myntra-logo.png?v=1679841749&width=150" alt="Myntra" loading="lazy">
+      </a>
+      <a class="partner-tile rv d3" href="https://www.jiomart.com/search/vgr">
+        <img src="https://vgrofficial.in/cdn/shop/files/jiomart-logo.png?v=1679841770&width=150" alt="JioMart" loading="lazy">
+      </a>
+      <a class="partner-tile rv d4" href="https://blinkit.com/brand/vgr/19204">
+        <img src="https://vgrofficial.in/cdn/shop/files/logo-v2.png?v=1744967597&width=150" alt="Blinkit" loading="lazy">
+      </a>
+      <a class="partner-tile rv d5" href="https://www.zeptonow.com/uncl/vgr">
+        <img src="https://vgrofficial.in/cdn/shop/files/Zepto_Logo_svg.png?v=1740996282&width=150" alt="Zepto" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand-wrap">
+      <div class="footer-brand-mark">VGR<span>.</span></div>
+      <div class="footer-brand-sub">India's #1 professional grooming brand. Engineered for performance, built for everyone.</div>
+      <div class="footer-social">
+        <a class="soc-btn" href="https://www.instagram.com/vgrofficial.in/" aria-label="Instagram">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a class="soc-btn" href="https://www.facebook.com/vgrofficial.in" aria-label="Facebook">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a class="soc-btn" href="https://www.youtube.com/channel/UCqj-oy1d6GfD-SejpChtWQA" aria-label="YouTube">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.55C5.12 20 12 20 12 20s6.88 0 8.6-.45a2.78 2.78 0 0 0 1.94-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a class="soc-btn" href="https://api.whatsapp.com/send?phone=919667796722&text=Namaste!" aria-label="WhatsApp">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="footer-col-title">Customer</div>
+        <a class="footer-link" href="https://vgrofficial.shiprocket.co/tracking/">Track Order</a>
+        <a class="footer-link" href="https://vgrofficial.in/pages/contact">Contact Us</a>
+        <a class="footer-link" href="https://vgrofficial.in/pages/vgr-warranty-policy">Warranty</a>
+        <a class="footer-link" href="https://vgrofficial.in/pages/vgr-warranty-registration">Register Product</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Policies</div>
+        <a class="footer-link" href="https://vgrofficial.in/policies/refund-policy">Returns</a>
+        <a class="footer-link" href="https://vgrofficial.in/policies/shipping-policy">Shipping</a>
+        <a class="footer-link" href="https://vgrofficial.in/policies/privacy-policy">Privacy</a>
+        <a class="footer-link" href="https://vgrofficial.in/policies/terms-of-service">Terms</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <a class="footer-link" href="https://vgrofficial.in/pages/about-us">About Us</a>
+        <a class="footer-link" href="https://vgrofficial.in/pages/careers">Careers</a>
+        <a class="footer-link" href="https://vgrofficial.in/blogs/news">Blog</a>
+        <a class="footer-link" href="https://vgrofficial.in/pages/e-catalog">E-Catalogue</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-link">1800 257 8939</div>
+        <div class="footer-link">Toll-free · Mon–Sat</div>
+        <div class="footer-link">10am–6pm IST</div>
+        <div class="footer-link" style="font-size:11px;word-break:break-all">customercare@vgrofficial.in</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&#169; 2026 VGR India Official Private Limited</div>
+    <div class="footer-contact">Plot 1001/A, Najafgarh Industrial Area, New Delhi 110043</div>
+  </div>
+</footer>
+
+<div style="height:56px"></div>
+</div><!-- /PG -->
+
+<!-- Back to Top -->
+<button class="btt" id="bttBtn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+/* ========= PRELOADER ========= */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('PL').classList.add('gone');
+    document.getElementById('PG').classList.add('alive');
+    setTimeout(initReveals, 120);
+  }, 2100);
+});
+
+/* ========= HERO IMAGE PRELOAD ========= */
+(function(){
+  ['https://vgrofficial.in/cdn/shop/files/1741669611469_VGR4in1-1_959b86c5-3385-41d7-afec-7a1b879c8d95.jpg?v=1764419085&width=1400',
+   'https://vgrofficial.in/cdn/shop/files/Artboard_13_copy_2.png?width=1400',
+   'https://vgrofficial.in/cdn/shop/files/1745289851729_V-STEPLESSPRO4IN1_13.jpg?v=1768494346&width=1400',
+   'https://vgrofficial.in/cdn/shop/files/1745289837240_V-STEPLESSPRO4IN1_5.jpg?v=1768494346&width=1400'
+  ].forEach(s=>{ const i=new Image(); i.src=s; });
+})();
+
+/* ========= HERO PARALLAX ========= */
+const hBg = document.getElementById('hBg');
+const hero = document.getElementById('hero');
+let parallaxTick = false;
+window.addEventListener('scroll', () => {
+  if (!parallaxTick) {
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      // Only parallax while hero is visible
+      if (sy < window.innerHeight * 1.4) {
+        hBg.style.transform = 'translate3d(0,' + (sy * 0.32) + 'px,0)';
+      }
+      parallaxTick = false;
+    });
+    parallaxTick = true;
+  }
+}, { passive: true });
+
+/* ========= NAV STATE ON SCROLL ========= */
+const nav = document.getElementById('mainNav');
+const heroH = () => hero.offsetHeight;
+window.addEventListener('scroll', () => {
+  if (window.scrollY > heroH() - 80) {
+    nav.classList.remove('over-hero');
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.add('over-hero');
+    nav.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+/* ========= HERO CAROUSEL (fade between slides) ========= */
+const SLIDES = 4, FIRST_IV = 4500, REG_IV = 4000;
+let cur = 0, hTimer = null, pTicker = null, pv = 0;
+const slides = [document.getElementById('hS0'), document.getElementById('hS1'), document.getElementById('hS2'), document.getElementById('hS3')];
+const dotsWrap = document.getElementById('hDots');
+const pfBar = document.getElementById('hPFprog');
+
+for (let i = 0; i < SLIDES; i++) {
+  const b = document.createElement('button');
+  b.className = 'h-dot' + (i===0?' on':'');
+  b.setAttribute('aria-label','Slide '+(i+1));
+  b.onclick = () => jumpH(i);
+  dotsWrap.appendChild(b);
+}
+const getDots = () => dotsWrap.querySelectorAll('.h-dot');
+
+function goH(n) {
+  slides[cur].classList.remove('active');
+  getDots()[cur].classList.remove('on');
+  cur = ((n % SLIDES) + SLIDES) % SLIDES;
+  slides[cur].classList.add('active');
+  getDots()[cur].classList.add('on');
+}
+
+function startProg(dur) {
+  clearInterval(pTicker); pv = 0;
+  pfBar.style.transition = 'none'; pfBar.style.width = '0%';
+  const tick = 60;
+  pTicker = setInterval(() => {
+    pv += (tick / dur) * 100;
+    if (pv >= 100) { pv = 100; clearInterval(pTicker); }
+    pfBar.style.transition = 'width 0.06s linear';
+    pfBar.style.width = pv + '%';
+  }, 60);
+}
+
+function scheduleH(delay) {
+  clearTimeout(hTimer);
+  startProg(delay);
+  hTimer = setTimeout(() => { goH(cur+1); scheduleH(REG_IV); }, delay);
+}
+function jumpH(n) { goH(n); scheduleH(REG_IV); }
+
+document.getElementById('hNxt').onclick = () => jumpH(cur+1);
+document.getElementById('hPrv').onclick = () => jumpH(cur-1);
+
+// Touch swipe on hero
+let tx0 = 0;
+hero.addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; }, { passive: true });
+hero.addEventListener('touchend', e => {
+  const d = e.changedTouches[0].clientX - tx0;
+  if (Math.abs(d) > 40) jumpH(d < 0 ? cur+1 : cur-1);
+}, { passive: true });
+
+goH(0); scheduleH(FIRST_IV);
+
+/* ========= SCROLL REVEALS ========= */
+function initReveals() {
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -12px 0px' });
+  document.querySelectorAll('.rv,.rl,.rr,.feat-row').forEach(el => obs.observe(el));
+
+  /* sh-title underline reveal */
+  const shObs = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); shObs.unobserve(e.target); } });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.sh-title').forEach(el => shObs.observe(el));
+
+  /* Stats count-up */
+  const statObs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        animCount(document.getElementById('sn1'), 0, 50, 1800, 'K+', false);
+        animCount(document.getElementById('sn2'), 4.0, 4.7, 1400, '', true);
+        statObs.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const ss = document.getElementById('statsSection');
+  if (ss) statObs.observe(ss);
+}
+
+function animCount(el, from, to, dur, suffix, isDecimal) {
+  if (!el) return;
+  const start = performance.now();
+  function frame(now) {
+    const t = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    const val = from + (to - from) * ease;
+    el.textContent = isDecimal ? val.toFixed(1) : Math.round(val);
+    if (t < 1) requestAnimationFrame(frame);
+    else el.textContent = isDecimal ? to.toFixed(1) : to;
+  }
+  requestAnimationFrame(frame);
+}
+
+/* ========= CATEGORY FILTER ========= */
+function filterCat(btn) {
+  document.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on'));
+  btn.classList.add('on');
+  const cat = btn.dataset.cat;
+  let count = 0;
+  document.querySelectorAll('.pcard').forEach(card => {
+    const show = cat === 'all' || card.dataset.cat === cat;
+    card.classList.toggle('hidden', !show);
+    if (show) count++;
+  });
+  const ce = document.getElementById('prodCount');
+  if (ce) ce.textContent = count + ' product' + (count !== 1 ? 's' : '');
+  if (navigator.vibrate) navigator.vibrate(5);
+}
+
+/* ========= WISHLIST ========= */
+function toggleHeart(btn) {
+  const on = btn.classList.toggle('on');
+  btn.innerHTML = on ? '&#9829;' : '&#9825;';
+  btn.style.transform = 'scale(1.45)';
+  setTimeout(() => { btn.style.transform = ''; }, 200);
+  if (navigator.vibrate) navigator.vibrate(on ? [6,12,6] : 5);
+}
+
+/* ========= CART ========= */
+let qty = 0;
+function addCart(btn) {
+  const orig = btn.textContent;
+  btn.textContent = 'Added';
+  btn.classList.add('ok');
+  qty++;
+  const pip = document.getElementById('cpip');
+  pip.textContent = qty; pip.classList.add('on');
+  if (navigator.vibrate) navigator.vibrate([8,16,6]);
+  setTimeout(() => { btn.textContent = orig; btn.classList.remove('ok'); }, 2200);
+}
+
+/* ========= FAQ ========= */
+function fq(id) {
+  const it = document.getElementById(id);
+  const ans = document.getElementById(id+'a');
+  const was = it.classList.contains('op');
+  document.querySelectorAll('.fq-item').forEach(i => {
+    i.classList.remove('op');
+    const a = document.getElementById(i.id+'a'); if (a) a.classList.remove('op');
+  });
+  if (!was) { it.classList.add('op'); ans.classList.add('op'); }
+}
+
+/* ========= BACK TO TOP ========= */
+const btt = document.getElementById('bttBtn');
+window.addEventListener('scroll', () => { btt.classList.toggle('on', window.scrollY > 500); }, { passive: true });
+</script>
+</body>
+</html>
