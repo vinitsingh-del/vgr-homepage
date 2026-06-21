@@ -238,22 +238,34 @@ img{display:block;max-width:100%}
   /* Hide mobile-style full-bg video */
   .hero-vid-bg,.hero-vid-overlay,.h-glow{display:none}
   /* Left panel */
+  /* ── Left panel: text centered vertically ── */
   .h-body{
     width:50%;flex-shrink:0;
     background:linear-gradient(155deg,#051a18 0%,#083a35 55%,#062d28 100%);
-    display:flex;flex-direction:column;justify-content:flex-end;
-    padding:0 56px 100px;
+    display:flex;flex-direction:column;
+    justify-content:center;       /* vertically center the text block */
+    padding:80px 64px 120px;      /* extra bottom for proof bar clearance */
     margin:0;max-width:none;
     position:relative;overflow:hidden
   }
+  /* Decorative teal ring — top-right of left panel */
   .h-body::before{
-    content:'';position:absolute;top:-30%;left:-15%;
-    width:70%;aspect-ratio:1;
-    background:radial-gradient(circle,rgba(10,151,144,.22) 0%,transparent 65%);
-    pointer-events:none
+    content:'';position:absolute;
+    top:-18%;right:-22%;
+    width:72%;aspect-ratio:1/1;
+    border:1px solid rgba(10,151,144,0.14);
+    border-radius:50%;pointer-events:none
   }
-  .h-headline{font-size:clamp(44px,4.5vw,80px);letter-spacing:-3px}
-  .h-sub{font-size:15px}
+  /* Teal radial glow */
+  .h-body::after{
+    content:'';position:absolute;
+    top:-12%;right:-32%;
+    width:88%;aspect-ratio:1/1;
+    background:radial-gradient(circle,rgba(10,151,144,0.18) 0%,transparent 58%);
+    border-radius:50%;pointer-events:none
+  }
+  .h-headline{font-size:clamp(44px,4.2vw,78px);letter-spacing:-3px}
+  .h-sub{font-size:15px;max-width:400px}
   /* Right panel */
   .hero-vid-panel{
     width:50%;flex-shrink:0;
